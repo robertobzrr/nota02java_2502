@@ -48,12 +48,13 @@ public class Main {
 
         int i = 0;
         switch(cp.getOpcaoPagamento()){
+
             case 1, 2, 3, 4:
-                System.out.println("Desconto aplicado!!\nPreço final = "+cp.aplicarDesconto(cp.getValor()));
+                System.out.println("Desconto aplicado!!\nPreço final = "+cp.aplicarDesconto());
                 break;
 
             case 5:
-                System.out.println("\"Valor dividido em 3x Parcelas de = "+cp.aplicarDesconto(cp.getValor()));
+                System.out.println("\"Valor dividido em 3x Parcelas de = "+cp.aplicarDesconto());
                 break;
 
         }

@@ -3,6 +3,7 @@ public class ControleProduto {
         private int codigo, quantidadeEstoque, quantidadeCompra, opcaoPagamento;
         private String nome, cor;
         private double tamanho, peso, valor;
+        double valorTotal;
 
 
              public void setCodigo (int codigo_digitado){
@@ -90,21 +91,19 @@ public class ControleProduto {
         }
 
 
-        //if else com problema de mostrar o valor parcelado
-        public double aplicarDesconto(double OpcaoPagamento){
+        //parte abaixo com problema sem retornar o desejado
+        public double aplicarDesconto() {
 
-                 if (OpcaoPagamento >= 1 && OpcaoPagamento <= 4){
-                     valor = quantidadeCompra - (quantidadeCompra * 0.05);
-                     return valor;
-                 }else if (OpcaoPagamento == 5){
-                     valor = valor / 3;
-                     return valor;
-                 }else {
-                     return valor;
-                 }
+            if (opcaoPagamento >= 1 && opcaoPagamento <= 4) {
+                valorTotal = valorTotal - (valorTotal * 0.05);
+                return valorTotal;
+            } else if (opcaoPagamento == 5) {
+                valorTotal = valorTotal / 3;
+                return valorTotal;
+            }
 
+            return valorTotal;
         }
-
 
 
 
