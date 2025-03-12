@@ -43,18 +43,30 @@ public class Main {
         sc.nextLine();
 
         System.out.println("Valor total = "+ cp.definirValor(cp.getValor())+ "\nEscolha a forma de pagamento:\n[1] Pix\n[2] Dinheiro\n[3] Transferência\n[4] Débito\n[5] Crédito\n");
-        cp.setOpcaoPagamento(sc.nextInt());
+        cp.setFormaPagamento(sc.nextInt());
         sc.nextLine();
+
 
         int i = 0;
         switch(cp.getOpcaoPagamento()){
+            case 1:
+                System.out.println("No pix você recebe um desconto de 5%.\nPreço final = ");
+                break;
 
-            case 1, 2, 3, 4:
-                System.out.println("Desconto aplicado!!\nPreço final = "+cp.aplicarDesconto());
+            case 2:
+                System.out.println("Em dinheiro você recebe um desconto de 5%.\nPreço final = ");
+                break;
+
+            case 3:
+                System.out.println("Por transferência você recebe um desconto de 5%.\nPreço final = ");
+                break;
+
+            case 4:
+                System.out.println("No débito você recebe um desconto de 5%.\nPreço final = ");
                 break;
 
             case 5:
-                System.out.println("\"Valor dividido em 3x Parcelas de = "+cp.aplicarDesconto());
+                System.out.println("\nValor dividido em 3x Parcelas de = ");
                 break;
 
         }

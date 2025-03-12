@@ -2,8 +2,7 @@ public class ControleProduto {
 
         private int codigo, quantidadeEstoque, quantidadeCompra, opcaoPagamento;
         private String nome, cor;
-        private double tamanho, peso, valor;
-        double valorTotal;
+        private double tamanho, peso, valor, valorFinal;;
 
 
              public void setCodigo (int codigo_digitado){
@@ -70,7 +69,7 @@ public class ControleProduto {
              }
 
 
-             public void setOpcaoPagamento(int opcaoPagamento_digitado) {
+             public void setFormaPagamento(int opcaoPagamento_digitado) {
                  this.opcaoPagamento = opcaoPagamento_digitado;
              }
              public int getOpcaoPagamento() {
@@ -80,30 +79,30 @@ public class ControleProduto {
 
 
         public double definirValor(double valor){
-               valor = valor * quantidadeCompra;
-               return valor;
+            return valor * quantidadeCompra;
+
         }
 
 
         public double atualizarEstoque(int quantidadeEstoque){
-               quantidadeEstoque = quantidadeEstoque - quantidadeCompra;
-               return quantidadeEstoque;
+            return quantidadeEstoque - quantidadeCompra;
         }
 
 
-        //parte abaixo com problema sem retornar o desejado
-        public double aplicarDesconto() {
+        public double aplicarDesconto(double valor, double quantidadeCompra, double valorFinal) {
 
-            if (opcaoPagamento >= 1 && opcaoPagamento <= 4) {
-                valorTotal = valorTotal - (valorTotal * 0.05);
-                return valorTotal;
-            } else if (opcaoPagamento == 5) {
-                valorTotal = valorTotal / 3;
-                return valorTotal;
+            if (opcaoPagamento > 0 && opcaoPagamento < 5) {
+                valorFinal = valor - (valor * 0.05);
+                return valorFinal;
+            } else {
+                valorFinal = valor / 3;
+                return valorFinal;
             }
 
-            return valorTotal;
         }
+
+
+
 
 
 
